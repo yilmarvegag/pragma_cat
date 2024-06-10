@@ -1,4 +1,4 @@
-const String urlBase = 'https://api.thecatapi.com/';
+const String urlBase = 'https://api.thecatapi.com';
 
 class ConstUrlEndpoint {
   static String _baseUrl({int version = 1}) => '$urlBase/v$version';

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:pragma_cat/domain/entities/cats/breed_entity.dart';
-import 'package:pragma_cat/views/widgets/breed_image.dart';
+import 'package:pragma_cat/presentation/views/widgets/breed_image.dart';
 
 class BreedDetailScreen extends StatelessWidget {
   final BreedEntity breadEntity;
   final String imageUrl;
 
   const BreedDetailScreen({
+    super.key,
     required this.breadEntity,
     required this.imageUrl,
   });
@@ -16,6 +17,13 @@ class BreedDetailScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(breadEntity.name),
+        // leading: IconButton(
+        //   icon: const Icon(Icons.arrow_back),
+        //   onPressed: () {
+        //     BlocProvider.of<CatListBloc>(context).add(NavigateBack());
+        //     Navigator.pop(context);
+        //   },
+        // ),
       ),
       body: Column(
         children: [
@@ -76,6 +84,21 @@ class BreedDetailScreen extends StatelessWidget {
                     const SizedBox(height: 20),
                     Text(
                       'Wikipedia description: ${breadEntity.wikipediaUrl}',
+                      style: const TextStyle(fontSize: 18),
+                    ),
+                    const SizedBox(height: 20),
+                    Text(
+                      'Temperament: ${breadEntity.temperament}',
+                      style: const TextStyle(fontSize: 18),
+                    ),
+                    const SizedBox(height: 20),
+                    Text(
+                      'Country Code: ${breadEntity.countryCode}',
+                      style: const TextStyle(fontSize: 18),
+                    ),
+                    const SizedBox(height: 20),
+                    Text(
+                      'Imagen ID: ${breadEntity.referenceImageId}',
                       style: const TextStyle(fontSize: 18),
                     ),
                   ],

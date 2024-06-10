@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pragma_cat/views/screens/home.dart';
+import 'package:pragma_cat/presentation/views/screens/home.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -31,9 +31,9 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'Catbreeds',
-              style: TextStyle(
+            Text(
+              'Catbreeds'.toUpperCase(),
+              style: const TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
               ),
@@ -41,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
             const SizedBox(height: 20),
             Image.asset(
               "assets/img/icon-splash.png",
-              height: 400,
+              height: 500,
               fit: BoxFit.contain,
             ),
           ],

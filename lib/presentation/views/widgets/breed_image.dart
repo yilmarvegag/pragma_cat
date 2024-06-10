@@ -4,6 +4,7 @@ class BreadImage extends StatelessWidget {
   final String imageUrl;
 
   const BreadImage({
+    super.key,
     required this.imageUrl,
   });
 

@@ -3,7 +3,7 @@ import 'package:pragma_cat/data/models/cats/breed_model.dart';
 import 'package:pragma_cat/domain/repositories/i_cat_repository.dart';
 
 class CatRepositoryImpl implements ICatRepository {
-  final CatRemoteDataSource _catRemoteDataSource;
+  final CatRemoteDataSourceImpl _catRemoteDataSource;
 
   CatRepositoryImpl(this._catRemoteDataSource);
 
