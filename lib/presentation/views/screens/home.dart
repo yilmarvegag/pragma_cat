@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pragma_cat/domain/entities/cats/breed_entity.dart';
+import 'package:pragma_cat/presentation/bloc/catimage/catimage_bloc.dart';
 import 'package:pragma_cat/presentation/bloc/catlist/catlist_bloc.dart';
 import 'package:pragma_cat/presentation/views/widgets/breed_card.dart';
 
@@ -26,7 +27,12 @@ class _HomeScreenState extends State<HomeScreen> {
     return BlocBuilder<CatListBloc, CatListState>(
       builder: (context, state) {
         if (state is CatListLoading) {
-          return const Center(child: CircularProgressIndicator());
+          return Container(
+            color: Colors.white,
+            child: const Center(
+              child: CircularProgressIndicator(),
+            ),
+          );
         } else if (state is CatListError) {
           return Center(child: Text('Error: ${state.error}'));
           // } else if (state is CatListNavigating) {
@@ -111,9 +117,10 @@ class _HomeScreenState extends State<HomeScreen> {
             body: _breeds.isNotEmpty
                 ? ListView.builder(
                     itemCount: _breeds.length,
-                    itemBuilder: (context, index) => BreedCard(
-                      breed: _breeds[index],
-                    ),
+                    itemBuilder: (context, index) {
+                      final breed = _breeds[index];
+                      return BreedCard(breed: breed);
+                    },
                   )
                 : const Center(
                     child: Text(

@@ -24,6 +24,7 @@ class BreedModel extends BreedEntity {
   final int vocalisation;
   final String referenceImageId;
   final String wikipediaUrl;
+  final String imageUrl;
 
   BreedModel({
     required this.id,
@@ -49,6 +50,7 @@ class BreedModel extends BreedEntity {
     required this.vocalisation,
     required this.referenceImageId,
     required this.wikipediaUrl,
+    required this.imageUrl,
   }) : super(
           id: id,
           name: name,
@@ -73,6 +75,7 @@ class BreedModel extends BreedEntity {
           vocalisation: vocalisation,
           referenceImageId: referenceImageId,
           wikipediaUrl: wikipediaUrl,
+          imageUrl: imageUrl,
         );
 
   factory BreedModel.fromMap(Map<String, dynamic> json) => BreedModel(
@@ -99,6 +102,7 @@ class BreedModel extends BreedEntity {
         vocalisation: json["vocalisation"],
         referenceImageId: json["reference_image_id"] ?? "",
         wikipediaUrl: json["wikipedia_url"] ?? "",
+        imageUrl: '',
       );
 
   Map<String, dynamic> toMap() => {
